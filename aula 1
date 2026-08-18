@@ -1,0 +1,38 @@
+use vendas;
+
+-- Mostrar todos os produtos
+SELECT * FROM produto;
+
+-- Mostrar todos os clientes
+SELECT * FROM cliente;
+
+-- Mostrar apenas nome e cidade do cliente 
+SELECT nome_cliente, cidade  FROM cliente;
+
+-- Mostrar o codigo, nome e UF do cliente 
+SELECT codigo_cliente, uf FROM cliente;	
+
+-- Exibe a estrutura da tabela 
+desc cliente;
+
+-- Usando condiçoes para filtrar o resultado
+-- Mostrar apenas quem mora em POSSE 
+
+
+select nome_cliente, endereco from cliente WHERE cidade = 'POSSE';
+
+
+-- Jeito mais organizado de fazer o codigo
+select nome_cliente, endereco
+ from cliente 
+ WHERE cidade = 'Formosa';
+
+
+-- Mostrar os produtos que tem 
+-- precos maior do que  R$ 10 e sao pesados em kg 
+
+
+SELECT * 
+FROM produto
+WHERE valor_unitario> 10 AND unidade_produto='kg'       -- se for colocar o "ou" (or) é no lugardo and  
+ORDER BY  valor_unitario, descricao_produto DESC;  -- ordenados pelo descricao_produtode Z-A
