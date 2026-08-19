@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+
+<script>
+
+function calcular () {
+
+var nota1 = document.getElementById("nota1").value;
+var nota2 = document.getElementById("nota2").value;
+var nota3 = document.getElementById("nota3").value;
+
+var media = (Number(nota1) + Number(nota2) + Number(nota3)) / 3;
+
+if (media >= 7) {
+    alert("Sua média é: " + media.toFixed(2) + "\nAprovado");
+}
+else if (media >= 5) {
+    alert("Sua média é: " + media.toFixed(2) + "\nRecuperação");
+}
+else {
+    alert("Sua média é: " + media.toFixed(2) + "\nReprovado");
+}
+
+}
+
+</script>
+
+<h2>MÉDIA DO ALUNO</h2>
+
+<label>Nota 1:</label>
+<input type="number" id="nota1" placeholder="Digite Aqui...">
+
+<br><br>
+
+<label>Nota 2:</label>
+<input type="number" id="nota2" placeholder="Digite Aqui...">
+
+<br><br>
+
+<label>Nota 3:</label>
+<input type="number" id="nota3" placeholder="Digite Aqui...">
+
+<br><br>
+
+<button onclick="calcular()">Calcular</button>
+
+</body>
+</html>
