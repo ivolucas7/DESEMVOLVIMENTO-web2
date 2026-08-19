@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+<body>
+
+<script>
+
+function calcular () {
+
+var celsius = document.getElementById("celsius").value;
+
+var fahrenheit = (celsius * 9 / 5) + 32;
+
+if (celsius < 15) {
+
+    alert("Temperatura: " + celsius + " °C" +
+    "\nFahrenheit: " + fahrenheit.toFixed(2) + " °F" +
+    "\nTemperatura baixa");
+
+}
+else if (celsius <= 30) {
+
+    alert("Temperatura: " + celsius + " °C" +
+    "\nFahrenheit: " + fahrenheit.toFixed(2) + " °F" +
+    "\nTemperatura agradável");
+
+}
+else {
+
+    alert("Temperatura: " + celsius + " °C" +
+    "\nFahrenheit: " + fahrenheit.toFixed(2) + " °F" +
+    "\nTemperatura alta");
+
+}
+
+}
+
+</script>
+
+<h2>CONVERSOR DE TEMPERATURA</h2>
+
+<label>Temperatura em Celsius:</label>
+<input type="number" id="celsius" placeholder="Digite Aqui...">
+
+<br><br>
+
+<button onclick="calcular()">Converter</button>
+
+</body>
+</html>
