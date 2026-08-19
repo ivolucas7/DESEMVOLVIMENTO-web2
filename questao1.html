@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+
+        <input type="number" id="peso" placeholder="Peso (kg)">
+        <input type="number" id="altura" placeholder="Altura (m)" step="0.01">
+
+        <button onclick="calcularIMC()">Calcular IMC</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularIMC() {
+            var peso = Number(document.getElementById("peso").value);
+            var altura = Number(document.getElementById("altura").value);
+            var resultado = document.getElementById("resultado");
+
+            if (peso <= 0 || altura <= 0) {
+                resultado.innerHTML = "Informe valores válidos.";
+                resultado.style.backgroundColor = "gray";
+                resultado.style.color = "white";
+                return;
+            }
+
+            var imc = peso / (altura * altura);
+            var classificacao;
+
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+                resultado.style.backgroundColor = "#3498db";
+            } else if (imc < 25) {
+                classificacao = "Peso normal";
+                resultado.style.backgroundColor = "#2ecc71";
+            } else if (imc < 30) {
+                classificacao = "Sobrepeso";
+                resultado.style.backgroundColor = "#f1c40f";
+            } else {
+                classificacao = "Obesidade";
+                resultado.style.backgroundColor = "#e74c3c";
+            }
+
+            resultado.style.color = "white";
+
+            resultado.innerHTML =
+                "IMC: " + imc.toFixed(2) +
+                "<br>Classificação: " + classificacao;
+        }
+    </script>
+
+</body>
+</html>
